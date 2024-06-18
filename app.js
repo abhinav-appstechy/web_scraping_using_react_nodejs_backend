@@ -67,11 +67,11 @@ app.post(
         .trim();
       const price = parseFloat(priceText.replace("$", "").replace(",", ""));
 
-      console.log(index);
-      console.log(`productLink https://www.amazon.com${productLink}`);
-      console.log("produtImage", produtImage);
-      console.log("productName-", productName);
-      console.log("price-", price);
+      // console.log(index);
+      // console.log(`productLink https://www.amazon.com${productLink}`);
+      // console.log("produtImage", produtImage);
+      // console.log("productName-", productName);
+      // console.log("price-", price);
 
       if (!isNaN(price) && price >= minPrice && price <= maxPrice) {
         products.push({
@@ -90,6 +90,10 @@ app.post(
   }
 );
 
+app.get("/", (req, res)=>{
+  return res.send("Server is running!!");
+})
+
 app.listen(5000, () => {
-  console.log("Server is running at port http://localhost:5000");
+  console.log("Server is running!");
 });
